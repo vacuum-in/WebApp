@@ -1,0 +1,27 @@
+﻿@model WebApp.Models.MyModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <p>
+        <h1>Thank you @Model.Name!</h1>
+        @if (Model.WillAttend == true)
+        {
+            @:It's greatthat you're coming. The drinks are already in the fridge!
+        }
+        else
+        {
+            @:Sorry
+        }
+    </p>
+    <p>Click <a asp-action="ListResponses">Here</a> to tsee who is coming  </p>
+</body>
+</html>

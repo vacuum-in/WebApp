@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+       <h3><b>System info</b></h3> 
+    </div>
+    <div>
+        @ViewBag.hostname
+    </div>
+    <div>
+        @ViewBag.OS
+    </div>
+    <div>
+        @ViewBag.ww
+    </div>
+    <div>
+        @ViewBag.dns
+    </div>
+    <div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>IP Adresses</td>
+                </tr>
+                @foreach (string ip in ViewBag.ips)
+                {
+                    @if (@ip != null)
+                    {
+                    <tr>
+                        <td>  @ip</td>
+                    </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+
+        <br />@ViewBag.outp
+    
+    </div>
+    <div>
+        <a asp-action="SomeTest">SomeTest</a>
+    </div>
+</body>
+</html>
